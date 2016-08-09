@@ -1,0 +1,25 @@
+%h1 Projects
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.name
+
+        %td
+          = link_to(project, class: "waves-effect waves-light btn-floating") do
+            %i.medium.material-icons visibility
+        %td= link_to 'Edit', edit_project_path(project)
+        %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        
+%br
+
+= link_to  new_project_path, :class => "waves-effect waves-light btn-floating", title: "New Project" do 
+  %i.large.material-icons library_add

@@ -28,6 +28,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 gem 'haml-rails'
 gem 'acts_as_commentable_with_threading'
 gem 'acts_as_tree',git: 'https://github.com/amerine/acts_as_tree.git'
+gem 'react-rails'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 

@@ -3,12 +3,23 @@
 <head>
   <title>Todo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container">
+    <%= render "nav" %>
+    <% unless flash.empty? %>
+      <script>
+      <% flash.each do |name, msg| %>
+          Materialize.toast("<%= msg %>", 4000);
+      <% end %>
+      </script>
+      <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
